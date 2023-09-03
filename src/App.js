@@ -11,7 +11,7 @@ function App() {
           element={<LandingPage />}
         />
         <Route
-          path='/auth/*'
+          path='/users/*'
           element={<AuthPage />}
         />
       </Routes>

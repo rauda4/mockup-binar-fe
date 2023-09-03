@@ -49,7 +49,7 @@ export default function Navbar(props) {
               <li>
                 {!username ? (
                   <a
-                    href='/auth/login'
+                    href='/users/login'
                     className='w-full text-white'>
                     <BiSolidUserCircle
                       size={40}

@@ -17,7 +17,7 @@ export default function AuthPage() {
         />
         <Route
           path='/*'
-          element={<Navigate to={'/'} />}
+          element={<Navigate to={'/users/register'} />}
         />
       </Routes>
     </>
