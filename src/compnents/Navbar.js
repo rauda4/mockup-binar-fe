@@ -10,6 +10,8 @@ export default function Navbar(props) {
   const handleLogout = () => {
     // Perform logout action
     localStorage.removeItem('username');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('email');
     navigate('/');
     window.location.reload();
   };
