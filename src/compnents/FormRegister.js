@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { register, reset } from '../feature/authSlice';
+import { register, reset } from '../feature/auth/authSlice';
 import AlertError from './AllerError';
 import Spinner from './Spinner';
 

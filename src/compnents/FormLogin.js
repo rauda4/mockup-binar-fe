@@ -3,7 +3,7 @@ import AlertError from './AllerError';
 import Spinner from './Spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { login, reset } from '../feature/authSlice';
+import { login, reset } from '../feature/auth/authSlice';
 
 export default function FormLogin() {
   const [error, setError] = useState('');
@@ -62,7 +62,7 @@ export default function FormLogin() {
                   </label>
                   <input
                     type='text'
-                    placeholder='Please Enter 9977'
+                    placeholder='Please Enter 9977 user A and 112 user B'
                     name='kodeunik'
                     value={kodeunik}
                     onChange={onChange}
