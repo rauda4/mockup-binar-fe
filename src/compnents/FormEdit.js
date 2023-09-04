@@ -8,7 +8,7 @@ import {
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Home from '../pages/Home';
 
-export default function ToogleEdit() {
+export default function FormEdit() {
   const [todo, setTodo] = useState('');
   const [keterangan, setKeterangan] = useState('');
   const dispatch = useDispatch();

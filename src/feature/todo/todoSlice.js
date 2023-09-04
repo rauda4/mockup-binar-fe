@@ -14,7 +14,7 @@ export const getTodos = createAsyncThunk('todo', async () => {
 });
 
 // read todo based user id
-export const getTodoById = createAsyncThunk('todo/:userId', async () => {
+export const getTodoById = createAsyncThunk('todo/userid', async () => {
   const UserId = localStorage.getItem('userId');
   const response = await axios.get(
     `https://mockup-binar-be-production.up.railway.app/todo/${UserId}`,
@@ -35,19 +35,19 @@ export const addTodo = createAsyncThunk(
 );
 
 export const updateTodo = createAsyncThunk(
-  '/update/:userid/:id',
-  async ({ id, todo, keterangan, user_id }) => {
+  'todo/update/',
+  async ({ id, todo, keterangan }) => {
     const UserId = localStorage.getItem('userId');
     const response = await axios.put(
       `https://mockup-binar-be-production.up.railway.app/todo/${UserId}/${id}`,
-      { todo, keterangan, user_id },
+      { todo, keterangan, id },
     );
     return response.data;
   },
 );
 
 // delete todo baser user id and id todo
-export const deleteTodo = createAsyncThunk('todo/:userid/:id', async (id) => {
+export const deleteTodo = createAsyncThunk('todo/delete', async (id) => {
   const UserId = localStorage.getItem('userId');
   await axios.delete(
     `https://mockup-binar-be-production.up.railway.app/todo/${UserId}/${id}`,
@@ -78,10 +78,7 @@ const todoSlice = createSlice({
         todoEntity.removeOne(state, action.payload);
       })
       .addCase(updateTodo.fulfilled, (state, action) => {
-        todoEntity.updateOne(state, {
-          id: action.payload.id,
-          updates: action.payload,
-        });
+        todoEntity.updateOne(state, action.payload);
       });
   },
 });
