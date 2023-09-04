@@ -6,7 +6,6 @@ export default function FormAddTodo() {
   const [formData, setFormData] = useState({
     todo: '',
     keterangan: '',
-    user_id: '',
   });
   const { todo, keterangan } = formData;
   const Id = localStorage.getItem('userId');
