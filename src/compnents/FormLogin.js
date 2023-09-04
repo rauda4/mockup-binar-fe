@@ -62,7 +62,7 @@ export default function FormLogin() {
                   </label>
                   <input
                     type='text'
-                    placeholder='Please Enter 9977 user A and 112 user B'
+                    placeholder='Please Enter 9977 user A and 1122 user B'
                     name='kodeunik'
                     value={kodeunik}
                     onChange={onChange}
