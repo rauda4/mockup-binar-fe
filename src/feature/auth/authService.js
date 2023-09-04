@@ -35,6 +35,7 @@ const logout = () => {
   localStorage.removeItem('userId');
   localStorage.removeItem('email');
   localStorage.removeItem('user');
+  localStorage.removeItem('kode unik');
   window.location.reload();
 };
 

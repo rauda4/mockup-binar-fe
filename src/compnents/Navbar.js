@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { BiSolidUserCircle, BiLogOut } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../feature/auth/authSlice';
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const username = localStorage.getItem('username');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogout = () => {
     // Perform logout action
-    localStorage.removeItem('username');
-    localStorage.removeItem('userId');
-    localStorage.removeItem('email');
+    dispatch(logout());
     navigate('/');
     window.location.reload();
   };
