@@ -4,14 +4,19 @@ import { Link } from 'react-router-dom';
 import {
   getTodoById,
   todoSelector,
-  deleteTodo,
+  deleteTodo
 } from '../feature/todo/todoSlice';
 
 export default function FormGetTodo() {
-    
   const userid = localStorage.getItem('userId');
   const dispatch = useDispatch();
+
+  // cara 1 untuk get data dari state
   const todos = useSelector(todoSelector.selectAll);
+
+  // cara 2 untuk get data dari state
+  // const todo2 = useSelector((state) => state?.todo?.entities);
+  // const todos2 = Object.values(todo2);
 
   useEffect(() => {
     dispatch(getTodoById());

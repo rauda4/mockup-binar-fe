@@ -8,7 +8,7 @@ import { login, reset } from '../feature/auth/authSlice';
 export default function FormLogin() {
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
-    kodeunik: '',
+    kodeunik: ''
   });
 
   const { kodeunik } = formData;
@@ -16,7 +16,7 @@ export default function FormLogin() {
   const dispatch = useDispatch();
 
   const { isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.auth,
+    (state) => state.auth
   );
 
   useEffect(() => {
@@ -33,14 +33,14 @@ export default function FormLogin() {
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userData = {
-      kodeunik,
+      kodeunik
     };
     dispatch(login(userData));
   };
@@ -76,7 +76,7 @@ export default function FormLogin() {
                   <button className='btn btn-primary'>Login</button>
                   <label className='label justify-center'>
                     <a
-                      href='/auth/register'
+                      href='/users/register'
                       className='label-text-alt link link-hover text-blue-800'>
                       Don't Have an Account ? Register Now
                     </a>
